@@ -28,7 +28,7 @@ dependencies:
   build_runner: ^1.10.0
   cached_network_image: ^3.0.0-nullsafety
   cupertino_icons: ^1.0.2
-  # dio: ^4.0.0-prev3
+  dio: ^4.0.0-prev3
   # vexana has a package
   easy_localization: ^3.0.0
   flutter_mobx: ^2.0.0

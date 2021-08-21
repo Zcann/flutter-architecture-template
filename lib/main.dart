@@ -23,6 +23,7 @@ Future<void> main() async {
       startLocale: LanguageManager.instance.enLocale,
     ),
   ));
+  
 }
 
 Future<void> _init() async {
