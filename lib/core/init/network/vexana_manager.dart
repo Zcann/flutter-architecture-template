@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:vexana/vexana.dart';
 
 class VexanaManager {
+  
   static VexanaManager? _instace;
   static VexanaManager get instance {
     if (_instace != null) return _instace!;
@@ -10,8 +11,8 @@ class VexanaManager {
     return _instace!;
   }
 
-  static const String _iosBaseUrl = 'http://localhost:3000/';
-  static const String _androidBaseUrl = 'http://10.0.2.2:3000/';
+  static const String _iosBaseUrl = 'http://45.84.188.133:8311/api/';
+  static const String _androidBaseUrl = 'http://45.84.188.133:8311/api/';
 
   VexanaManager._init();
 

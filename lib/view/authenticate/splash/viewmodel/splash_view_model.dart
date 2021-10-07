@@ -45,7 +45,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel, DeviceAndCache {
     if (isNeedForceUpdate) {
       showAboutDialog(context: context!, children: [Text('Neeed to Update')]);
     } else {
-      // await navigation.navigateToPageClear(path: NavigationConstants.TEST_VIEW);
+      await navigation.navigateToPageClear(path: NavigationConstants.TEST_VIEW);
     }
   }
 

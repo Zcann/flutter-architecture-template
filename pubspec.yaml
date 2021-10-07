@@ -50,6 +50,9 @@ dependencies:
   logger: ^1.0.0
 
 dev_dependencies:
+  meta: 1.6.0 
+  analyzer: 1.5.0
+  
   flutter_test:
     sdk: flutter
 

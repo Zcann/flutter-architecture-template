@@ -1,6 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:fluttermvvmtemplate/view/messages/view/messages_view.dart';
+import 'package:fluttermvvmtemplate/view/register/model/register_model.dart';
+
+import 'package:fluttermvvmtemplate/view/register/view/register_view.dart';
+import 'package:fluttermvvmtemplate/view/sites/view/sites_view.dart';
 
 import '../../../../core/base/state/base_state.dart';
 import '../../../../core/base/view/base_widget.dart';
@@ -22,59 +27,59 @@ class _TestsViewState extends BaseState<TestsView> {
   Widget build(BuildContext context) {
     return BaseView<TestViewModel>(
       viewModel: TestViewModel(),
-      onModelReady: (model) {
+      onModelReady: (model) {   
         model.setContext(context);
         viewModel = model;
       },
-      onPageBuilder: (context, value) => scaffoldBody,
+      onPageBuilder: (context, value) => MessageView(),
     );
   }
 
-  Widget get scaffoldBody => Scaffold(
-        appBar: appBar(),
-        floatingActionButton: floatingActionButtonNumberIncrement,
-        body: textNumber,
-      );
+//   Widget get scaffoldBody => Scaffold(
+//         appBar: appBar(),
+//         floatingActionButton: floatingActionButtonNumberIncrement,
+//         body: textNumber,
+//       );
 
-  AppBar appBar() {
-    return AppBar(
-      leading: Text(LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)),
-      title: textWelcomeWidget(),
-      actions: [iconButtonChangeTheme()],
-    );
-  }
+//   AppBar appBar() {
+//     return AppBar(
+//       leading: Text(LocaleManager.instance.getStringValue(PreferencesKeys.TOKEN)),
+//       title: textWelcomeWidget(),
+//       actions: [iconButtonChangeTheme()],
+//     );
+//   }
 
-  IconButton iconButtonChangeTheme() {
-    return IconButton(
-        icon: Icon(Icons.change_history),
-        onPressed: () {
-          context.setLocale(LanguageManager.instance.enLocale);
-        });
-  }
+//   IconButton iconButtonChangeTheme() {
+//     return IconButton(
+//         icon: Icon(Icons.change_history),
+//         onPressed: () {
+//           context.setLocale(LanguageManager.instance.enLocale);
+//         });
+//   }
 
-  Widget get textNumber {
-    return Column(
-      children: <Widget>[
-        Observer(
-          builder: (context) => Text(
-            viewModel.number.toString(),
-          ),
-        ),
-      ],
-    );
-  }
+//   Widget get textNumber {
+//     return Column(
+//       children: <Widget>[
+//         Observer(
+//           builder: (context) => Text(
+//             viewModel.number.toString(),
+//           ),
+//         ),
+//       ],
+//     );
+//   }
 
-  Text textWelcomeWidget() => Text(LocaleKeys.welcome.locale);
+//   Text textWelcomeWidget() => Text(LocaleKeys.welcome.locale);
 
-  FloatingActionButton get floatingActionButtonNumberIncrement {
-    return FloatingActionButton(
-      onPressed: () => viewModel.incrementNumber(),
-    );
-  }
-}
+//   FloatingActionButton get floatingActionButtonNumberIncrement {
+//     return FloatingActionButton(
+//       onPressed: () => viewModel.incrementNumber(),
+//     );
+//   }
+// }
 
-extension _FormArea on _TestsViewState {
-  TextFormField get mailField => TextFormField(
-        validator: (value) => value!.isValidEmail,
-      );
+// extension _FormArea on _TestsViewState {
+//   TextFormField get mailField => TextFormField(
+//         validator: (value) => value!.isValidEmail,
+//       );
 }

@@ -31,16 +31,21 @@ class SplashService extends ISplashService {
   @override
   Future<ForceUpdateModel?> checkDeviceVersion(
       {required String version, required String platform}) async {
-    final response =
-        await networkManager.send<ForceUpdateModel, ForceUpdateModel>(
-      _path,
-      parseModel: ForceUpdateModel(),
-      method: RequestType.GET,
-      queryParameters: Map.fromEntries([
-        SplashServiceQuery.VERSION.toMapValue(version),
-        SplashServiceQuery.PLATFORM.toMapValue(platform)
-      ]),
-    );
-    return response.data;
+    // final response =
+    //     await networkManager.send<ForceUpdateModel, ForceUpdateModel>(
+    //   _path,
+    //   parseModel: ForceUpdateModel(),
+    //   method: RequestType.GET,
+    //   queryParameters: Map.fromEntries([
+    //     SplashServiceQuery.VERSION.toMapValue(version),
+    //     SplashServiceQuery.PLATFORM.toMapValue(platform)
+    //   ]),
+    // );
+    var forceModel = ForceUpdateModel();
+    forceModel.currentVersion = '1.2';
+    forceModel.isForceUpdate = false;
+    forceModel.type = '';
+    return forceModel;
+    //return response.data;
   }
 }

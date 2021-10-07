@@ -2,9 +2,5 @@
 <!-- Modify this file to customize your launch splash screen -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/fuchsia" />
-    <item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/circle_hwa" />
-    </item>
+    
 </layer-list>

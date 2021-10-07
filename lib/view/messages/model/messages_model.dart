@@ -1,20 +1,30 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import '../../../core/base/model/base_model.dart';
+import 'package:vexana/vexana.dart';
 
 part 'messages_model.g.dart';
 
 @JsonSerializable()
-class MessagesModel extends BaseModel {
-  int? userId;
+class ProductModel extends INetworkModel<ProductModel> {
+  int? productId;
+  int? categoryId;
+  String? productName;
+  int? unitsInStock;
+  int? unitPrice;
 
+  ProductModel(
+      {this.productId,
+      this.categoryId,
+      this.productName,
+      this.unitsInStock,
+      this.unitPrice});
 
-  Map<String, dynamic> toJson() {
-    return _$MessagesModelToJson(this);
+  @override
+  ProductModel fromJson(Map<String, Object?> json) {
+    return _$ProductModelFromJson(json);
   }
 
   @override
-  fromJson(Map<String, Object> json) {
-    return _$MessagesModelFromJson(json);
+  Map<String, Object?> toJson() {
+    return _$ProductModelToJson(this);
   }
 }

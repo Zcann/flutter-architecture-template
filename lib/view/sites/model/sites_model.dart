@@ -7,6 +7,7 @@ part 'sites_model.g.dart';
 class SitesModel extends BaseModel {
   String? siteName;
 
+  
 
   Map<String, dynamic> toJson() {
     return _$SitesModelToJson(this);

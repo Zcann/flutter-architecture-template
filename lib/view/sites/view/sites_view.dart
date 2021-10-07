@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fluttermvvmtemplate/core/base/view/base_widget.dart';
-import '../viewModel/site_list_view_model.dart';
+import '../viewModel/sites_view_model.dart';
 
 
 class SitesView extends SitesViewModel {
@@ -21,16 +22,18 @@ class SitesView extends SitesViewModel {
   
   Widget getListView(SitesViewModel value, BuildContext context){
     
-    return   ListView.builder(
-        itemCount: value.siteList!.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: CircleAvatar(
-            ),
-            title: Text(value.siteList![index].siteName ?? ''),
-          );
-        },
-      );
+    return Observer(builder: (_) {
+      return ListView.builder(
+          itemCount: value.siteList!.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+              ),
+              title: Text(value.siteList![index]),
+            );
+          },
+        );
+    });
 
 
   }

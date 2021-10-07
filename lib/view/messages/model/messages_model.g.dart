@@ -6,11 +6,21 @@ part of 'messages_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MessagesModel _$MessagesModelFromJson(Map<String, dynamic> json) {
-  return MessagesModel()..userId = json['userId'] as int?;
+ProductModel _$ProductModelFromJson(Map<String, dynamic> json) {
+  return ProductModel(
+    productId: json['productId'] as int?,
+    categoryId: json['categoryId'] as int?,
+    productName: json['productName'] as String?,
+    unitsInStock: json['unitsInStock'] as int?,
+    unitPrice: json['unitPrice'] as int?,
+  );
 }
 
-Map<String, dynamic> _$MessagesModelToJson(MessagesModel instance) =>
+Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
     <String, dynamic>{
-      'userId': instance.userId,
+      'productId': instance.productId,
+      'categoryId': instance.categoryId,
+      'productName': instance.productName,
+      'unitsInStock': instance.unitsInStock,
+      'unitPrice': instance.unitPrice,
     };

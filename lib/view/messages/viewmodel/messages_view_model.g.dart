@@ -49,13 +49,13 @@ mixin _$MessagesViewModel on _MessagesViewModelBase, Store {
   final _$messagesAtom = Atom(name: '_MessagesViewModelBase.messages');
 
   @override
-  List<MessagesModel>? get messages {
+  List<Data>? get messages {
     _$messagesAtom.reportRead();
     return super.messages;
   }
 
   @override
-  set messages(List<MessagesModel>? value) {
+  set messages(List<Data>? value) {
     _$messagesAtom.reportWrite(value, super.messages, () {
       super.messages = value;
     });
@@ -80,16 +80,7 @@ mixin _$MessagesViewModel on _MessagesViewModelBase, Store {
   final _$_MessagesViewModelBaseActionController =
       ActionController(name: '_MessagesViewModelBase');
 
-  @override
-  void incrementNumber() {
-    final _$actionInfo = _$_MessagesViewModelBaseActionController.startAction(
-        name: '_MessagesViewModelBase.incrementNumber');
-    try {
-      return super.incrementNumber();
-    } finally {
-      _$_MessagesViewModelBaseActionController.endAction(_$actionInfo);
-    }
-  }
+  
 
   @override
   String toString() {
