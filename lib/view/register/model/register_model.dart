@@ -5,9 +5,12 @@ part 'register_model.g.dart';
 
 @JsonSerializable()
 class RegisterModel extends INetworkModel<RegisterModel> {
-  final String? phone;
+  String? email;
+  String? password;
+  String? firstName;
+  String? lastName;
 
-  RegisterModel({this.phone});
+  RegisterModel({this.email, this.password, this.firstName, this.lastName});
 
   @override
   RegisterModel fromJson(Map<String, Object?> json) {

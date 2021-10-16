@@ -1,26 +1,27 @@
 import 'package:fluttermvvmtemplate/view/messages/model/messages_response_model.dart';
 import 'package:fluttermvvmtemplate/view/messages/model/messages_model.dart';
+import 'package:fluttermvvmtemplate/view/register/model/register_model.dart';
 
 
 import 'package:vexana/vexana.dart';
 
-abstract class IMessagesService {
+abstract class IRegisterService {
   final INetworkManager networkManager;
 
-  IMessagesService(this.networkManager);
+  IRegisterService(this.networkManager);
 
-  Future<Product_Response?> getMessages(
-      );
+  Future<RegisterModel?> toReg(RegisterModel newReg);
 }
 
-class MessagesService extends IMessagesService {
+class RegisterService extends IRegisterService {
   final String _path = 'Products/getall';
-  MessagesService(INetworkManager networkManager) : super(networkManager);
+  RegisterService(INetworkManager networkManager) : super(networkManager);
 
   @override
-  Future<Product_Response?> getMessages() async {
+  Future<RegisterModel?> toReg(RegisterModel newReg) async {
     final response =
-        await networkManager.send(_path, parseModel: Product_Response(), method: RequestType.GET);
-    return response.data;
+        await networkManager.send(_path, parseModel: RegisterModel(), method: RequestType.POST
+        ,data: newReg);
+      return response.data;
   }
 }

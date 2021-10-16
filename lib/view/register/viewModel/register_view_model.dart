@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttermvvmtemplate/core/init/network/vexana_manager.dart';
 import 'package:fluttermvvmtemplate/view/register/model/register_model.dart';
+import 'package:fluttermvvmtemplate/view/register/service/register_service.dart';
 
 import 'package:mobx/mobx.dart';
 import 'package:provider/provider.dart';
@@ -18,13 +20,17 @@ class RegisterViewModel = _RegisterViewModelBase with _$RegisterViewModel;
 abstract class _RegisterViewModelBase with Store, BaseViewModel {
   GlobalKey<FormState> formState = GlobalKey();
   GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
+  late IRegisterService service;
+
 
 
   void setContext(BuildContext context) {
     this.context = context;
   }
 
-  void init() {}
+  void init() {
+    service = RegisterService(VexanaManager.instance.networkManager);
+  }
 
   @observable
   bool isLoading = false;
@@ -39,8 +45,16 @@ abstract class _RegisterViewModelBase with Store, BaseViewModel {
 
   @action
   Future<void> toPost() async {
-    RegisterModel newUser = RegisterModel();
     //post the newUser
+    var phone = '098765';
+
+    var newReg = RegisterModel(email: 'asdf',password: phone,firstName: 'asd', lastName: 'qwrw',);
+
+    final response = await service.toReg(newReg);
+
+    print(response!.password);
+    
+
     
   }
 

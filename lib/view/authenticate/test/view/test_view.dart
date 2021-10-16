@@ -1,11 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:fluttermvvmtemplate/view/home/social/view/social_view.dart';
 import 'package:fluttermvvmtemplate/view/messages/view/messages_view.dart';
+import 'package:fluttermvvmtemplate/view/messages/viewmodel/messages_view_model.dart';
 import 'package:fluttermvvmtemplate/view/register/model/register_model.dart';
 
 import 'package:fluttermvvmtemplate/view/register/view/register_view.dart';
 import 'package:fluttermvvmtemplate/view/sites/view/sites_view.dart';
+import 'package:fluttermvvmtemplate/view/sites/view/test_view.dart';
 
 import '../../../../core/base/state/base_state.dart';
 import '../../../../core/base/view/base_widget.dart';
@@ -31,7 +34,7 @@ class _TestsViewState extends BaseState<TestsView> {
         model.setContext(context);
         viewModel = model;
       },
-      onPageBuilder: (context, value) => MessageView(),
+      onPageBuilder: (context, value) => Testsssss(),
     );
   }
 

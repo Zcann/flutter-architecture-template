@@ -1,9 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttermvvmtemplate/core/init/network/vexana_manager.dart';
 import 'package:fluttermvvmtemplate/view/messages/model/messages_response_model.dart';
-import '../model/messages_model.dart';
 import '../service/messages_service.dart';
 
 import 'package:mobx/mobx.dart';
@@ -32,24 +30,16 @@ abstract class _MessagesViewModelBase with Store, BaseViewModel {
   @override
   void init() {
     service = MessagesService(VexanaManager.instance.networkManager);
-    
+    getMessages();
   }
   
 
   @observable
-  int number = 0;
-
-  @observable
   bool isLoading = false;
 
-  @observable
-  bool isEven = false;
   
   @observable
-  bool dogru = false;
-
-  @observable
-  List<Data>? messages;
+  List<Data>? messages = [];
   
 
   void changeTheme() {
@@ -69,6 +59,6 @@ abstract class _MessagesViewModelBase with Store, BaseViewModel {
     final response = await service.getMessages();
     messages = response!.data;
 
-    print(messages!.length.toString());
+    print(messages!.length);
   }
 }

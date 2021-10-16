@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'messages_view_model.dart';
+part of 'sites_view_model.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'messages_view_model.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$MessagesViewModel on _MessagesViewModelBase, Store {
-  final _$isLoadingAtom = Atom(name: '_MessagesViewModelBase.isLoading');
+mixin _$SitesViewModel on _SitesViewModelBase, Store {
+  final _$isLoadingAtom = Atom(name: '_SitesViewModelBase.isLoading');
 
   @override
   bool get isLoading {
@@ -24,42 +24,41 @@ mixin _$MessagesViewModel on _MessagesViewModelBase, Store {
     });
   }
 
-  final _$messagesAtom = Atom(name: '_MessagesViewModelBase.messages');
+  final _$siteListAtom = Atom(name: '_SitesViewModelBase.siteList');
 
   @override
-  List<Data>? get messages {
-    _$messagesAtom.reportRead();
-    return super.messages;
+  List<SitesModel>? get siteList {
+    _$siteListAtom.reportRead();
+    return super.siteList;
   }
 
   @override
-  set messages(List<Data>? value) {
-    _$messagesAtom.reportWrite(value, super.messages, () {
-      super.messages = value;
+  set siteList(List<SitesModel>? value) {
+    _$siteListAtom.reportWrite(value, super.siteList, () {
+      super.siteList = value;
     });
   }
 
   final _$getSampleRequestAsyncAction =
-      AsyncAction('_MessagesViewModelBase.getSampleRequest');
+      AsyncAction('_SitesViewModelBase.getSampleRequest');
 
   @override
   Future<void> getSampleRequest() {
     return _$getSampleRequestAsyncAction.run(() => super.getSampleRequest());
   }
 
-  final _$getMessagesAsyncAction =
-      AsyncAction('_MessagesViewModelBase.getMessages');
+  final _$getListAsyncAction = AsyncAction('_SitesViewModelBase.getList');
 
   @override
-  Future<void> getMessages() {
-    return _$getMessagesAsyncAction.run(() => super.getMessages());
+  Future<void> getList() {
+    return _$getListAsyncAction.run(() => super.getList());
   }
 
   @override
   String toString() {
     return '''
 isLoading: ${isLoading},
-messages: ${messages}
+siteList: ${siteList}
     ''';
   }
 }

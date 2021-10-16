@@ -9,7 +9,7 @@ mixin DeviceAndCache {
     }
     await Future.wait([
       LocaleManager.prefrencesInit(),
-      DeviceUtility.instance!.initPackageInfo()
+      DeviceUtility.instance.initPackageInfo()
     ]);
   }
 }

@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sites_model.dart';
+part of 'mytest_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SitesModel _$SitesModelFromJson(Map<String, dynamic> json) {
-  return SitesModel(
-    siteName: json['siteName'] as String?,
+myTestModel _$myTestModelFromJson(Map<String, dynamic> json) {
+  return myTestModel(
+    name: json['name'] as String?,
   );
 }
 
-Map<String, dynamic> _$SitesModelToJson(SitesModel instance) =>
+Map<String, dynamic> _$myTestModelToJson(myTestModel instance) =>
     <String, dynamic>{
-      'siteName': instance.siteName,
+      'name': instance.name,
     };
